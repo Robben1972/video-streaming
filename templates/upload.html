@@ -1,0 +1,21 @@
+<!-- templates/upload.html -->
+{% extends "base.html" %}
+{% block content %}
+<h2 class="mb-4">Upload Video</h2>
+{% if message %}
+<div class="alert {{ 'alert-success' if 'successfully' in message else 'alert-danger' }}">
+    {{ message }}
+</div>
+{% endif %}
+<form action="/upload" method="post" enctype="multipart/form-data">
+    <div class="form-group mb-3">
+        <label for="title">Video Title</label>
+        <input type="text" name="title" id="title" class="form-control" required>
+    </div>
+    <div class="form-group mb-3">
+        <label for="video_file">Select Video</label>
+        <input type="file" name="video_file" id="video_file" accept="video/*" class="form-control" required>
+    </div>
+    <button type="submit" class="btn">Upload</button>
+</form>
+{% endblock %}

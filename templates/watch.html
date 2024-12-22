@@ -1,0 +1,12 @@
+<!-- templates/watch.html -->
+{% extends "base.html" %}
+{% block content %}
+<h2 class="mb-4">{{ title }}</h2>
+<video controls>
+    <source src="/videos/{{ video_name }}" type="video/mp4">
+    Your browser does not support the video tag.
+</video>
+<div class="mt-3">
+    <a href="/" class="btn btn-secondary">Back to Home</a>
+</div>
+{% endblock %}

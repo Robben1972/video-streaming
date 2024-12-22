@@ -1,0 +1,16 @@
+<!-- templates/home.html -->
+{% extends "base.html" %}
+{% block content %}
+<h2 class="mb-4">Available Videos</h2>
+{% if videos %}
+<ul class="list-group">
+    {% for video in videos %}
+    <li class="list-group-item">
+        <a href="/watch/{{ video.name }}">{{ video.name }}</a>
+    </li>
+    {% endfor %}
+</ul>
+{% else %}
+<p>No videos available. Be the first to <a href="/upload">upload</a> one!</p>
+{% endif %}
+{% endblock %}

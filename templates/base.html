@@ -1,0 +1,24 @@
+<!-- templates/base.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Video App</title>
+    <link rel="stylesheet" href="{{ url_for('static', path='styles.css') }}">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <span class="navbar-brand">Video App</span>
+            <div class="navbar-nav">
+                <a href="/">Home</a>
+                <a href="/upload">Upload Video</a>
+            </div>
+        </nav>
+    </header>
+    <main class="container">
+        {% block content %}{% endblock %}
+    </main>
+</body>
+</html>
