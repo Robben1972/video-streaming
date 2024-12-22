@@ -30,9 +30,6 @@ supabase: Client = create_client(SUPABASE_URL, SUPABASE_ANON_KEY)
 @app.get('/', response_class=HTMLResponse)
 async def home(request: Request):
     videos = supabase.storage.from_(SUPABASE_BUCKET).list()
-    # print(videos)
-    # if len(videos) <= 1:
-    #     return {'error': 'no videos found'}
     return templates.TemplateResponse('home.html', {'request': request, 'videos': videos})
 
 @app.get('/videos/{video_name}')
